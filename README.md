@@ -86,7 +86,7 @@ sass使用$符号来标识变量(老版本的sass使用!来标识变量。改成
 
 sass变量的声明和css属性的声明很像：
 
-```
+```sass
 $highlight-color: #F90;
 ```
 
@@ -94,7 +94,7 @@ $highlight-color: #F90;
 
 与CSS属性不同，变量可以在css规则块定义之外存在。当变量定义在css规则块内，那么该变量只能在此规则块内使用。如果它们出现在任何形式的{...}块中（如@media或者@font-face块），情况也是如此：
 
-```
+```sass
 $nav-color: #F90;
 nav {
   $width: 100px;
@@ -118,7 +118,7 @@ nav {
 
 凡是css属性的标准值（比如说1px或者bold）可存在的地方，变量就可以使用。css生成时，变量会被它们的值所替代。之后，如果你需要一个不同的值，只需要改变这个变量的值，则所有引用此变量的地方生成的值都会随之改变。
 
-```
+```sass
 $highlight-color: #F90;
 .selected {
   border: 1px solid $highlight-color;
@@ -135,7 +135,7 @@ $highlight-color: #F90;
 
 在声明变量时，变量值也可以引用其他变量。当你通过粒度区分，为不同的值取不同名字时，这相当有用。下例在独立的颜色值粒度上定义了一个变量，且在另一个更复杂的边框值粒度上也定义了一个变量：
 
-```
+```sass
 $highlight-color: #F90;
 $highlight-border: 1px solid $highlight-color;
 .selected {
@@ -156,7 +156,7 @@ sass的变量名可以与css中的属性名和选择器名称相同，包括中�
 
 不过，sass并不想强迫任何人一定使用中划线或下划线，所以这两种用法相互兼容。用中划线声明的变量可以使用下划线的方式引用，反之亦然。这意味着即使compass选择用中划线的命名方式，这并不影响你在使用compass的样式中用下划线的命名方式进行引用：
 
-```
+```sass
 $link-color: blue;
 a {
   color: $link_color;
@@ -173,7 +173,7 @@ a {
 
 sass变量也有局部与全局变量之分，变量支持块级作用域，嵌套规则内定义的变量只能在嵌套规则内使用（局部变量），不在嵌套规则内定义的变量则可在任何地方使用（全局变量）。将局部变量转换为全局变量可以添加 !global 声明：
 
-```
+```sass
 #main {
   $width: 5em !global;
   width: $width;
