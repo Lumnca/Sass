@@ -16,3 +16,5 @@
 
 在VC的扩展商店中搜索Sass并安装，Sass如下所示：
 
+![](https://github.com/Lumnca/Sass/blob/master/Img/a1.png)
+
